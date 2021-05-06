@@ -67,16 +67,6 @@ const scene = new THREE.Scene()
  */
 const textureLoader = new THREE.TextureLoader()
 const cubeTextureLoader = new THREE.CubeTextureLoader()
-
-const environmentMapTexture = cubeTextureLoader.load([
-    '/textures/environmentMaps/0/px.png',
-    '/textures/environmentMaps/0/nx.png',
-    '/textures/environmentMaps/0/py.png',
-    '/textures/environmentMaps/0/ny.png',
-    '/textures/environmentMaps/0/pz.png',
-    '/textures/environmentMaps/0/nz.png'
-])
-
 //
 //*physics world
 //
@@ -178,7 +168,6 @@ const floor = new THREE.Mesh(
         color: '#777777',
         metalness: 0.3,
         roughness: 0.4,
-        envMap: environmentMapTexture
     })
 )
 floor.receiveShadow = true
@@ -258,7 +247,6 @@ const sphereGeometry = new THREE.SphereBufferGeometry(1, 20,20)
 const sphereMaterial = new THREE.MeshStandardMaterial({
     metalness: 0.3,
     roughness: 0.4,
-    envMap: environmentMapTexture,
 })
 
 const createSphere = (radius, positon) =>{
@@ -294,7 +282,6 @@ const boxGeometry = new THREE.BoxBufferGeometry(1, 1)
 const boxMaterial = new THREE.MeshStandardMaterial({
     metalness: 0.3,
     roughness: 0.4,
-    envMap: environmentMapTexture,
 })
 
 const createBox = (width, height, depth, positon) =>{
